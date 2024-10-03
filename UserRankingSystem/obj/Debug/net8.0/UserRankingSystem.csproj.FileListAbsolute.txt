@@ -1,0 +1,8 @@
+/mnt/c/Users/benja/Desktop/SWE-Test/UserRankingSystem/obj/Debug/net8.0/UserRankingSystem.csproj.AssemblyReference.cache
+/mnt/c/Users/benja/Desktop/SWE-Test/UserRankingSystem/obj/Debug/net8.0/UserRankingSystem.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/c/Users/benja/Desktop/SWE-Test/UserRankingSystem/obj/Debug/net8.0/UserRankingSystem.AssemblyInfoInputs.cache
+/mnt/c/Users/benja/Desktop/SWE-Test/UserRankingSystem/obj/Debug/net8.0/UserRankingSystem.AssemblyInfo.cs
+/mnt/c/Users/benja/Desktop/SWE-Test/UserRankingSystem/obj/Debug/net8.0/UserRankingSystem.csproj.CoreCompileInputs.cache
+/mnt/c/Users/benja/Desktop/SWE-Test/UserRankingSystem/obj/Debug/net8.0/UserRankingSystem.MvcApplicationPartsAssemblyInfo.cs
+/mnt/c/Users/benja/Desktop/SWE-Test/UserRankingSystem/obj/Debug/net8.0/UserRankingSystem.MvcApplicationPartsAssemblyInfo.cache
+/mnt/c/Users/benja/Desktop/SWE-Test/UserRankingSystem/obj/Debug/net8.0/UserRankingSystem.sourcelink.json
