@@ -32,6 +32,7 @@ namespace UserRankingSystem.Controllers {
         public async Task<ActionResult<IEnumerable<User>>> GetUser([FromQuery] int? minScore, [FromQuery] bool sort = false) {
             var users = _context.Users.AsQueryable();
 
+            // minScore initialised as nullable; if it is not, filter values.
             if (minScore.HasValue) {
                 users = users.Where(u => u.Score >= minScore.Value);
             }
