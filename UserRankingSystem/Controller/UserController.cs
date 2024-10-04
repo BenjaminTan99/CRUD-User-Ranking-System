@@ -38,6 +38,15 @@ namespace UserRankingSystem.Controllers {
                 return BadRequest("Score must be a positive integer.");
             }
 
+            user = new User
+                {
+                    Name = "Test User",
+                    Email = "test@example.com",
+                    Score = 100
+                };
+
+            Console.WriteLine("Successful user addition.");
+
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
             // Return 201 created response
@@ -75,6 +84,8 @@ namespace UserRankingSystem.Controllers {
             existingUser.Score = user.Score;
 
             await _context.SaveChangesAsync();
+
+            Console.WriteLine("User succesfully updated.");
             // 204 No Content Response
             return NoContent();
         }
@@ -96,6 +107,7 @@ namespace UserRankingSystem.Controllers {
                 users = users.OrderByDescending(u => u.Score);
             }
 
+            Console.WriteLine("Users' scores successfully obtained.");
             return await users.ToListAsync();
         }
 
@@ -111,6 +123,7 @@ namespace UserRankingSystem.Controllers {
                 return NotFound();
             }
 
+            Console.WriteLine("User's score successfully obtained.");
             return user;
         }
 
@@ -128,6 +141,8 @@ namespace UserRankingSystem.Controllers {
 
             _context.Users.Remove(user);
             await _context.SaveChangesAsync();
+
+            Console.WriteLine("User successfully deleted.");
             // 204 No Content response
             return NoContent();
         }
@@ -158,6 +173,7 @@ namespace UserRankingSystem.Controllers {
             // Gets rank (1-based index) of the user. +1 since index is 0-based.
             var rank = rankedUsers.IndexOf(user) + 1;
 
+            Console.WriteLine("User's rank successfully obtained.");
             // Return 200 OK response.
             return Ok(rank);
         }

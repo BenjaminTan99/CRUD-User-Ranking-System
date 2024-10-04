@@ -11,8 +11,11 @@ using UserRankingSystem.Data;
 public class Startup {
     // Configures services like controllers and database context for the application.
     public void ConfigureServices(IServiceCollection services) {
-        services.AddDbContext<UserRankingContext>(options =>
-            options.UseSqlite("Data Source=userrankings.db"));
+        services.AddDbContext<UserRankingContext>(options => {
+            options.UseSqlite("Data Source=userrankings.db");
+            Console.WriteLine("Configuring database");
+        });
+
         
         services.AddControllers().AddJsonOptions(options =>
             {
@@ -20,6 +23,7 @@ public class Startup {
                 options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
             });
 
+        Console.WriteLine("DbContext Initialised!");
     }
 
     // Configures request pipeline.
