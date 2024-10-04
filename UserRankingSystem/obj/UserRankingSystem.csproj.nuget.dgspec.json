@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/mnt/c/Users/benja/Desktop/SWE-Test/UserRankingSystem/UserRankingSystem.csproj": {}
+    "C:\\Users\\benja\\Desktop\\SWE-Test\\UserRankingSystem\\UserRankingSystem.csproj": {}
   },
   "projects": {
-    "/mnt/c/Users/benja/Desktop/SWE-Test/UserRankingSystem/UserRankingSystem.csproj": {
+    "C:\\Users\\benja\\Desktop\\SWE-Test\\UserRankingSystem\\UserRankingSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/mnt/c/Users/benja/Desktop/SWE-Test/UserRankingSystem/UserRankingSystem.csproj",
+        "projectUniqueName": "C:\\Users\\benja\\Desktop\\SWE-Test\\UserRankingSystem\\UserRankingSystem.csproj",
         "projectName": "UserRankingSystem",
-        "projectPath": "/mnt/c/Users/benja/Desktop/SWE-Test/UserRankingSystem/UserRankingSystem.csproj",
-        "packagesPath": "/home/benjamin_tch/.nuget/packages/",
-        "outputPath": "/mnt/c/Users/benja/Desktop/SWE-Test/UserRankingSystem/obj/",
+        "projectPath": "C:\\Users\\benja\\Desktop\\SWE-Test\\UserRankingSystem\\UserRankingSystem.csproj",
+        "packagesPath": "C:\\Users\\benja\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\benja\\Desktop\\SWE-Test\\UserRankingSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/benjamin_tch/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\benja\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -47,9 +49,35 @@
               "target": "Package",
               "version": "[8.0.8, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.9.2, )"
             }
           },
           "imports": [
@@ -71,7 +99,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.402/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
