@@ -13,7 +13,7 @@ namespace UserRankingSystem.Data {
 
         public UserRankingContext(DbContextOptions<UserRankingContext> options) : base(options) {}
 
-        protected override void OnModelCreation(ModelBuilder modelBuilder) {
+        protected override void OnModelCreating(ModelBuilder modelBuilder) {
             // Email for all users should be unique.
             modelBuilder.Entity<User>().HasIndex(u => u.Email).IsUnique();
         }
