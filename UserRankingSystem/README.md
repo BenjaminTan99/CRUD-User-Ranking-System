@@ -41,7 +41,6 @@ UserRankingSystem/
 ├── appsettings.json
 ├── Program.cs
 ├── Startup.cs
-├── UserRankingSystem.csproj
 ├── README.md
 └── Tests/
     └── UserControllerTests.cs
