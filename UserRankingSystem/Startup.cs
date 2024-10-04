@@ -1,3 +1,10 @@
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using UserRankingSystem.Data;
+
 /// <summary>
 /// Class Startup deals with the configuration of services and middleware for the application.
 /// </summary>
@@ -7,7 +14,12 @@ public class Startup {
         services.AddDbContext<UserRankingContext>(options =>
             options.UseSqlite("Data Source=userrankings.db"));
         
-        services.AddControllers();
+        services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.PropertyNamingPolicy = null;
+                options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
+            });
+
     }
 
     // Configures request pipeline.
