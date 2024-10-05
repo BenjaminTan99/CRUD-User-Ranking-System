@@ -11,19 +11,21 @@ using UserRankingSystem.Data;
 public class Startup {
     // Configures services like controllers and database context for the application.
     public void ConfigureServices(IServiceCollection services) {
-        services.AddDbContext<UserRankingContext>(options => {
-            options.UseSqlite("Data Source=userrankings.db");
-            Console.WriteLine("Configuring database");
-        });
-
-        
         services.AddControllers().AddJsonOptions(options =>
             {
                 options.JsonSerializerOptions.PropertyNamingPolicy = null;
                 options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
             });
+        Console.WriteLine("Controllers configured.");
+
+        services.AddDbContext<UserRankingContext>(options => {
+            options.UseSqlite("Data Source=userrankings.db");
+            Console.WriteLine("Configuring database");
+        });
 
         Console.WriteLine("DbContext Initialised!");
+
+        services.AddSwaggerGen();
     }
 
     // Configures request pipeline.
@@ -31,6 +33,13 @@ public class Startup {
         if (env.IsDevelopment()) {
             app.UseDeveloperExceptionPage();
         }
+
+        app.UseSwagger();
+        app.UseSwaggerUI(c =>
+        {
+            c.SwaggerEndpoint("/swagger/v1/swagger.json", "UserRanking API V1");
+            c.RoutePrefix = string.Empty;
+        });
 
         app.UseRouting();
         app.UseEndpoints(endpoints => {
