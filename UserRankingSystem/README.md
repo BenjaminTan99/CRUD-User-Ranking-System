@@ -50,7 +50,7 @@ Notes: {IP} should be filled in by your personal IP address. You can find this u
    e.g. curl -X GET "http://0.0.0.0:5043/api/users/1"
 
 4. **Update user by specified ID**
-   curl -X PUT "http://{IP}:5043/api/users" -H "Content-Type: application/json" -d '{"name": "xxx", "email": "xxx@example.com", "score": xxx}'
+   curl -X PUT "http://{IP}:5043/api/users/1" -H "Content-Type: application/json" -d '{"name": "xxx", "email": "xxx@example.com", "score": xxx}'
 
    e.g. curl -X PUT "http://0.0.0.0:5043/api/users/1" -H "Content-Type: application/json" -d '{"name": "Alice", "email": "alice_updated@example.com", "score": 150}'
 
@@ -68,6 +68,11 @@ Notes: {IP} should be filled in by your personal IP address. You can find this u
    curl -X GET "http://{IP}:5043/api/users/rank/xxx"
 
    e.g. curl -X GET "http://0.0.0.0:5043/api/users/rank/1"
+
+Known bugs:
+Currently there is an issue where the ID is not resetted to the minimum value after that ID has been deleted.
+However, this bug should not affect the APIs on their own.
+e.g. Adding user 1 and 2 then deleting user 1 and adding the another user will result in the new user having ID 3.
 
 Below is the overall file structure of the user ranking system.
 
