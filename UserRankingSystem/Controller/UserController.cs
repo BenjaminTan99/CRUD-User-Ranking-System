@@ -50,9 +50,9 @@ namespace UserRankingSystem.Controllers {
         }
 
         /// <description>
-        /// Handles UPDATE requests. Ensures 
+        /// Handles UPDATE requests. Ensures that only the user with specified id is updated.
         /// </description>
-        [HttpPost]
+        [HttpPut("{id}")]
         public async Task<IActionResult> UpdateUser(int id, User user) {
             // 400 Bad Request if updating a different user.
             if (id != user.Id) {
@@ -71,7 +71,7 @@ namespace UserRankingSystem.Controllers {
             }
 
             // Ensure email is unique
-            if (_context.Users.Any(u => u.Email == user.Email && u.Id != id)) {
+            if (_context.Users.Any(u => u.Email == user.Email)) {
                 return BadRequest("Email already exists");
             }
 
