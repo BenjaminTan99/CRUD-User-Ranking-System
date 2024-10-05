@@ -52,33 +52,24 @@ namespace UserRankingSystem.Controllers {
         /// <description>
         /// Handles UPDATE requests. Ensures that only the user with specified id is updated.
         /// </description>
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateUser(int id, User user) {
-            // 400 Bad Request if updating a different user.
-            if (id != user.Id) {
-                return BadRequest("User ID mismatch");
-            }
-
-            // 400 Bad Request if invalidation for fields.
-            if (!ModelState.IsValid) {
-                return BadRequest(ModelState);  
-            }
-
+        [HttpPost("{id}")]
+        public async Task<IActionResult> UpdateUser(int id, [FromBody] User updatedUser) {
             var existingUser = await _context.Users.FindAsync(id);
             // 404 User Not Found
             if (existingUser == null) {
                 return NotFound();
             }
 
-            // Ensure email is unique
-            if (_context.Users.Any(u => u.Email == user.Email)) {
-                return BadRequest("Email already exists");
+            // 400 Bad Request if email already exists for a different user
+            if (_context.Users.Any(u => u.Email == updatedUser.Email && u.Id != id))
+            {
+                return BadRequest("Email already exists.");
             }
 
             // Update user details
-            existingUser.Name = user.Name;
-            existingUser.Email = user.Email;
-            existingUser.Score = user.Score;
+            existingUser.Name = updatedUser.Name;
+            existingUser.Email = updatedUser.Email;
+            existingUser.Score = updatedUser.Score;
 
             await _context.SaveChangesAsync();
 
@@ -121,7 +112,7 @@ namespace UserRankingSystem.Controllers {
             }
 
             Console.WriteLine("User's score successfully obtained.");
-            return user;
+            return Ok(user);
         }
 
         /// <description>
