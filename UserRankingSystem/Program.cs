@@ -15,6 +15,6 @@ public class Program {
         Host.CreateDefaultBuilder(args)
             .ConfigureWebHostDefaults(webBuilder => {
                 webBuilder.UseStartup<Startup>();
-                webBuilder.UseUrls("http://127.0.0.1:5043");
+                webBuilder.UseUrls("http://*:5043", "http://localhost:5043");
             });
 }
