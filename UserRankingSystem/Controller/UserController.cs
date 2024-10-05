@@ -12,12 +12,15 @@ using UserRankingSystem.Models;
 
 namespace UserRankingSystem.Controllers {
 
-    [Route("api/[controller]")]
+    [Route("api/users")]
     [ApiController]
     public class UserController: ControllerBase {
-        private UserRankingContext _context;
+        private readonly UserRankingContext _context;
 
-        public UserController(UserRankingContext context) { _context = context; }
+        public UserController(UserRankingContext context) { 
+            _context = context;
+            Console.WriteLine("User Controller Initialised.");
+        }
 
         /// <description>
         /// Handle POST requests. Only accepts new requests with different emails from the database.
@@ -38,13 +41,6 @@ namespace UserRankingSystem.Controllers {
                 return BadRequest("Score must be a positive integer.");
             }
 
-            user = new User
-                {
-                    Name = "Test User",
-                    Email = "test@example.com",
-                    Score = 100
-                };
-
             Console.WriteLine("Successful user addition.");
 
             _context.Users.Add(user);
@@ -56,6 +52,7 @@ namespace UserRankingSystem.Controllers {
         /// <description>
         /// Handles UPDATE requests. Ensures 
         /// </description>
+        [HttpPost]
         public async Task<IActionResult> UpdateUser(int id, User user) {
             // 400 Bad Request if updating a different user.
             if (id != user.Id) {
@@ -108,7 +105,7 @@ namespace UserRankingSystem.Controllers {
             }
 
             Console.WriteLine("Users' scores successfully obtained.");
-            return await users.ToListAsync();
+            return Ok(await users.ToListAsync());
         }
 
         /// <description>
