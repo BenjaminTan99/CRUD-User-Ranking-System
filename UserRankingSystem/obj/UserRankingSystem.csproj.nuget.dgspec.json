@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\benja\\Desktop\\SWE-Test\\UserRankingSystem\\UserRankingSystem.csproj": {}
+    "C:\\Users\\benja\\Desktop\\CRUD-User-Ranking-System\\UserRankingSystem\\UserRankingSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\benja\\Desktop\\SWE-Test\\UserRankingSystem\\UserRankingSystem.csproj": {
+    "C:\\Users\\benja\\Desktop\\CRUD-User-Ranking-System\\UserRankingSystem\\UserRankingSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\benja\\Desktop\\SWE-Test\\UserRankingSystem\\UserRankingSystem.csproj",
+        "projectUniqueName": "C:\\Users\\benja\\Desktop\\CRUD-User-Ranking-System\\UserRankingSystem\\UserRankingSystem.csproj",
         "projectName": "UserRankingSystem",
-        "projectPath": "C:\\Users\\benja\\Desktop\\SWE-Test\\UserRankingSystem\\UserRankingSystem.csproj",
+        "projectPath": "C:\\Users\\benja\\Desktop\\CRUD-User-Ranking-System\\UserRankingSystem\\UserRankingSystem.csproj",
         "packagesPath": "C:\\Users\\benja\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\benja\\Desktop\\SWE-Test\\UserRankingSystem\\obj\\",
+        "outputPath": "C:\\Users\\benja\\Desktop\\CRUD-User-Ranking-System\\UserRankingSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\benja\\AppData\\Roaming\\NuGet\\NuGet.Config",
