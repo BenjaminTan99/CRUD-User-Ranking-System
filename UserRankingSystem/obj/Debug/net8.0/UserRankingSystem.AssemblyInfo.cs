@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UserRankingSystem")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea8b24fdce142311d8214571329776bcff81f504")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6af5171bae65638a45748029ed5b9c8d57a93e8a")]
 [assembly: System.Reflection.AssemblyProductAttribute("UserRankingSystem")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UserRankingSystem")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
