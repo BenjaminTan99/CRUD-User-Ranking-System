@@ -61,9 +61,13 @@ namespace UserRankingSystem.Controllers {
             }
 
             // 400 Bad Request if email already exists for a different user
-            if (_context.Users.Any(u => u.Email == updatedUser.Email && u.Id != id))
-            {
+            if (_context.Users.Any(u => u.Email == updatedUser.Email)) {
                 return BadRequest("Email already exists.");
+            }
+
+            // 400 Bad Request if new score is 0 or below.
+            if (updatedUser.Score <= 0) {
+                return BadRequest("Score must be a positive integer.");
             }
 
             // Update user details
@@ -73,7 +77,7 @@ namespace UserRankingSystem.Controllers {
 
             await _context.SaveChangesAsync();
 
-            Console.WriteLine("User succesfully updated.");
+            Console.WriteLine("User successfully updated.");
             // 204 No Content Response
             return NoContent();
         }
@@ -93,6 +97,8 @@ namespace UserRankingSystem.Controllers {
 
             if (sort) {
                 users = users.OrderByDescending(u => u.Score);
+            } else {
+                users = users.OrderBy(u=> u.Score);
             }
 
             Console.WriteLine("Users' scores successfully obtained.");
@@ -140,7 +146,7 @@ namespace UserRankingSystem.Controllers {
         /// </description>
         [HttpGet("rank")]
         public async Task<ActionResult<IEnumerable<User>>> GetRankedUsers() {
-            return await _context.Users.OrderByDescending(u => u.Score).ToListAsync();
+            return Ok(await _context.Users.OrderByDescending(u => u.Score).ToListAsync());
         }
 
         /// <description>
