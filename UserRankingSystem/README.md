@@ -22,6 +22,7 @@ Ensure you have the following installed:
 4. **Run Database Migrations & Application**
    dotnet ef migrations add InitialCreate
    dotnet ef database update
+   dotnet build
    dotnet run
 
 5. **Testing the system**
@@ -37,6 +38,7 @@ Ensure you have the following installed:
 
 ### Example commands to test the system:
 Notes: {IP} should be filled in by your personal IP address. You can find this using ipconfig or similar commands. You must follow the exact rules below for each command and only change parts where xxx appears. For better information in the terminal, you may use --verbose for better clarity. The terminal running dotnet run should automatically input information everytime a RESTful API is called.
+
 1. **Add an entry to the database**
    curl -X POST "http://{IP}:5043/api/users" -H "Content-Type: application/json" -d '{"name": "xxx", "email": "xxx@example.com", "score": xxx}'
 
@@ -69,12 +71,12 @@ Notes: {IP} should be filled in by your personal IP address. You can find this u
 
    e.g. curl -X GET "http://0.0.0.0:5043/api/users/rank/1"
 
-Known bugs:
+**Known bugs**
 Currently there is an issue where the ID is not resetted to the minimum value after that ID has been deleted.
 However, this bug should not affect the APIs on their own.
 e.g. Adding user 1 and 2 then deleting user 1 and adding the another user will result in the new user having ID 3.
 
-There is also a possibility of the original database being filled with some data. Please reset or create a new database before testing.
+There is also a possibility of the original database being filled with some data. Please reset or create a new database before testing. 
 
 **File structure**
 Below is the overall file structure of the user ranking system.
