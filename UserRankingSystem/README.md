@@ -74,6 +74,9 @@ Currently there is an issue where the ID is not resetted to the minimum value af
 However, this bug should not affect the APIs on their own.
 e.g. Adding user 1 and 2 then deleting user 1 and adding the another user will result in the new user having ID 3.
 
+There is also a possibility of the original database being filled with some data. Please reset or create a new database before testing.
+
+**File structure**
 Below is the overall file structure of the user ranking system.
 
 UserRankingSystem/
